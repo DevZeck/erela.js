@@ -76,7 +76,7 @@ class Player {
         if (options.textChannel)
             this.textChannel = options.textChannel;
         const node = this.manager.nodes.get(options.node);
-        this.node = node || this.manager.leastLoadNodes.first();
+        this.node = node || this.manager.leastUsedNodes.first();
         if (!this.node)
             throw new RangeError("No available nodes.");
         this.manager.players.set(options.guild, this);
