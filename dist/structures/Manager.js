@@ -89,7 +89,7 @@ class Manager extends events_1.EventEmitter {
     get leastUsedNodes() {
         return this.nodes
             .filter((node) => node.connected)
-            .sort((a, b) => b.calls - a.calls);
+            .sort((a, b) => b.stats.players - a.stats.players);
     }
     /** Returns the least system load Nodes. */
     get leastLoadNodes() {
